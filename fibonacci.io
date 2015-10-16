@@ -1,13 +1,13 @@
+#
+# Demonstrates a non-recurive fibonacci sequence
+#
 Object fib := method(
-  # Get first argument
   max := doMessage(call message argAt(0));
 
-  # Fibonacci vars
   first  := 1
   second := 1
   next   := 0
 
-  # Fibonacci loop
   for(i, 1, max,
     first println
     next   = first + second
@@ -16,4 +16,5 @@ Object fib := method(
   )
 )
 
+# Print first 10 numbers in fibonacci sequence
 fib(10)

@@ -1,12 +1,14 @@
+#
+# Demonstrates various features of the language including File I/O
+#
 Matrix := list()
 
 Matrix dim := method(
-  numLists := doMessage(call message argAt(0));
-  length   := doMessage(call message argAt(1));
-  this     := call target
+  numLists := call evalArgAt(0)
+  length   := call evalArgAt(1)
   for(i, 1, numLists,
-    this append(list())
-    for(j, 1, length, this at(i-1) append(nil))
+    self append(list())
+    for(j, 1, length, self at(i-1) append(nil))
   )
 )
 
@@ -62,7 +64,15 @@ matrix dim(2, 4)
 # Set some values
 matrix set(0, 0, "a")
 matrix set(0, 1, "b")
-matrix set(1, 3, "L")
+matrix set(0, 2, "c")
+matrix set(0, 3, "d")
+matrix set(1, 0, "1")
+matrix set(1, 1, "2")
+matrix set(1, 2, "3")
+matrix set(1, 3, "4")
+
+# Print current matrix
+matrix println
 
 # Write matrix to file
 matrix toFile("matrix.txt")
@@ -71,5 +81,6 @@ matrix toFile("matrix.txt")
 newMatrix := Matrix clone
 newMatrix fromFile("matrix.txt")
 
+# Print new matrix
 newMatrix println
 

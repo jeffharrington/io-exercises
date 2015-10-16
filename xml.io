@@ -1,3 +1,6 @@
+#
+# Implement a fluent syntax for building XML in Io
+#
 Builder := Object clone
 
 Builder forward := method(

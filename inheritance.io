@@ -1,3 +1,6 @@
+#
+# Demonstrates inheritance in Io along with proto method
+#
 Object ancestors := method(
   prototype := self proto
   if(prototype != Object,
@@ -13,7 +16,7 @@ Animal speak := method("Ambigous animal noise" println)
 
 Duck := Animal clone
 Duck speak := method("Quack" println)
-Duck walk := method("waddle" println)
+Duck walk := method("Waddle" println)
 
 disco := Duck clone
 disco ancestors

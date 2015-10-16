@@ -1,3 +1,6 @@
+#
+# Demonstrates concurrency via Actor model using Coroutines
+#
 slower := Object clone
 slower start := method(
   wait(2)
@@ -13,8 +16,6 @@ faster start := method(
 # Should print "slowly", then "quickly"
 slower start
 faster start
-
-writeln("")
 
 # Should print "quickly", then "slowly"
 slower @@start
